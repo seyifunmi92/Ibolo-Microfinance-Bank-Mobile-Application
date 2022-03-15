@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "999853486581",
+    "project_id": "ibolo-mfb-mobile-app",
+    "storage_bucket": "ibolo-mfb-mobile-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999853486581:android:8b2eb373c44144ea2530bc",
+        "android_client_info": {
+          "package_name": "com.example.beststar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999853486581-37920d81baavii7u5ch71245tf7et46o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwzPj5WmJ0ib-OG8nBYTT-46yLlAx0a_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999853486581-37920d81baavii7u5ch71245tf7et46o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
