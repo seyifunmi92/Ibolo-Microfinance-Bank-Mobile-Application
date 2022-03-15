@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -40,77 +42,70 @@ class _HomeState extends State<Home> {
           },
         ),
         Scaffold(
-          backgroundColor: Colors.black54,
+          backgroundColor: Colors.black87,
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
               children: <Widget>[
                 // ignore: prefer_const_constructors
                 SizedBox(
-                  height: 48,
+                  height: 200,
                 ),
-                Text(
-                  'WELCOME TO',
-                  style: GoogleFonts.actor(
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'IBOLO',
-                      style: GoogleFonts.lato(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                      ),
-                    ),
-                  ],
-                ),
-                Text(
-                  'MICROFINANCE BANK',
-                  style: GoogleFonts.lato(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    letterSpacing: 7.0,
-                  ),
+
+                // ignore: prefer_const_constructors
+                Image(
+                  image: const AssetImage("lib/images/ibolospng.png"),
+                  height: 200,
                 ),
 
                 const SizedBox(
-                  height: 500,
+                  height: 245,
                 ),
 
                 buildIndicator(),
                 const SizedBox(
                   height: 30,
                 ),
-                RaisedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                  child: Text(
-                    'CONTINUE',
-                    style: GoogleFonts.lato(
-                      letterSpacing: 3.0,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
+
+                Container(
+                  width: 320,
+                  height: 42,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    // ignore: prefer_const_constructors
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      // 10% of the width, so there are ten blinds.
+                      // ignore: prefer_const_literals_to_create_immutables
+                      colors: <Color>[
+                        const Color(0xffd1c217),
+                        const Color(0xff403109),
+                      ], // red to yellow
+                      tileMode: TileMode
+                          .repeated, // repeats the gradient over the canvas
                     ),
                   ),
-                  padding: const EdgeInsets.fromLTRB(135, 15, 135, 15),
-                  color: Colors.grey[800],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    child: Center(
+                      child: Text(
+                        "LOGIN",
+                        style: GoogleFonts.actor(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.0,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
+
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 const Divider(
                   height: 5,
@@ -128,9 +123,11 @@ class _HomeState extends State<Home> {
                       width: 10,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/account');
+                      },
                       child: Text(
-                        'Register',
+                        'Sign Up',
                         style: GoogleFonts.lato(
                           fontSize: 12,
                           color: Colors.white,
@@ -143,9 +140,7 @@ class _HomeState extends State<Home> {
                       width: 80,
                     ),
                     TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/account');
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Open Account',
                         style: GoogleFonts.lato(
@@ -182,7 +177,7 @@ class _HomeState extends State<Home> {
   }
 
   Widget buildImage(String pictures) => Container(
-        color: Colors.grey,
+        color: Colors.transparent,
         margin: const EdgeInsets.symmetric(horizontal: 12),
         child: Image(
           image: AssetImage(

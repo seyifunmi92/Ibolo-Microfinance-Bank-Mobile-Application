@@ -13,32 +13,28 @@ class _RewardsState extends State<Rewards> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white24,
+      backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
           const SizedBox(height: 40),
-          Row(
-            children: <Widget>[
-              const SizedBox(
-                width: 37,
-              ),
-              Text(
-                'REWARDS AND REFFERALS',
-                style: GoogleFonts.lato(
-                  fontSize: 22.5,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.0,
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 0,
+          ),
+          const Image(
+            image: AssetImage("lib/images/ibolospng.png"),
+            height: 50,
           ),
           const SizedBox(
             height: 10,
           ),
-          const CircleAvatar(
-            backgroundImage: AssetImage('lib/images/besta.jpeg'),
-            radius: 35,
+          Text(
+            'REWARDS AND REFFERALS',
+            style: GoogleFonts.lato(
+              fontSize: 15,
+              color: Colors.blueGrey,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.0,
+            ),
           ),
           const SizedBox(
             height: 20,
@@ -49,6 +45,8 @@ class _RewardsState extends State<Rewards> {
               style: GoogleFonts.actor(
                 fontSize: 14,
                 letterSpacing: 0.2,
+                color: Colors.blueGrey,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -57,6 +55,8 @@ class _RewardsState extends State<Rewards> {
             style: GoogleFonts.actor(
               fontSize: 14,
               letterSpacing: 0.2,
+              color: Colors.blueGrey,
+              fontWeight: FontWeight.bold,
             ),
           ),
           Text(
@@ -64,6 +64,8 @@ class _RewardsState extends State<Rewards> {
             style: GoogleFonts.actor(
               fontSize: 14,
               letterSpacing: 0.2,
+              color: Colors.blueGrey,
+              fontWeight: FontWeight.bold,
             ),
           ),
           Text(
@@ -71,6 +73,8 @@ class _RewardsState extends State<Rewards> {
             style: GoogleFonts.actor(
               fontSize: 14,
               letterSpacing: 0.2,
+              color: Colors.blueGrey,
+              fontWeight: FontWeight.bold,
             ),
           ),
           Column(
@@ -81,7 +85,22 @@ class _RewardsState extends State<Rewards> {
                 height: 20,
               ),
               Container(
-                color: Colors.white12,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  // ignore: prefer_const_constructors
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    // 10% of the width, so there are ten blinds.
+                    // ignore: prefer_const_literals_to_create_immutables
+                    colors: <Color>[
+                      const Color(0xffd1c217),
+                      const Color(0xff403109),
+                    ], // red to yellow
+                    tileMode: TileMode
+                        .repeated, // repeats the gradient over the canvas
+                  ),
+                ),
                 height: 300,
                 width: 400,
                 child: Column(
@@ -94,10 +113,10 @@ class _RewardsState extends State<Rewards> {
                     Text(
                       '  How the Ibolo Rewards work',
                       style: GoogleFonts.actor(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
-                        letterSpacing: 2.0,
+                        letterSpacing: 1.0,
                       ),
                     ),
                     const SizedBox(
@@ -112,7 +131,7 @@ class _RewardsState extends State<Rewards> {
                           child: Text(
                             '1',
                             style: GoogleFonts.actor(
-                              color: Colors.blue,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),
@@ -144,7 +163,7 @@ class _RewardsState extends State<Rewards> {
                           child: Text(
                             '2',
                             style: GoogleFonts.actor(
-                              color: Colors.blue,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),
@@ -167,7 +186,7 @@ class _RewardsState extends State<Rewards> {
                               ),
                             ),
                             Text(
-                              'or referring a friend to open an account on Access More.',
+                              'or referring a friend to open an account on Ibolo Mobile app.',
                               style: GoogleFonts.actor(
                                 fontSize: 13,
                               ),
@@ -188,7 +207,7 @@ class _RewardsState extends State<Rewards> {
                           child: Text(
                             '3',
                             style: GoogleFonts.actor(
-                              color: Colors.blue,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                             ),
@@ -231,7 +250,7 @@ class _RewardsState extends State<Rewards> {
                           child: Text(
                             '4',
                             style: GoogleFonts.actor(
-                              color: Colors.blue,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                             ),
@@ -277,47 +296,28 @@ class _RewardsState extends State<Rewards> {
             height: 50,
           ),
           Container(
-            color: Colors.white12,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(0),
+              // ignore: prefer_const_constructors
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                // 10% of the width, so there are ten blinds.
+                // ignore: prefer_const_literals_to_create_immutables
+                colors: <Color>[
+                  const Color(0xffd1c217),
+                  const Color(0xff403109),
+                ], // red to yellow
+                tileMode:
+                    TileMode.repeated, // repeats the gradient over the canvas
+              ),
+            ),
             height: 55,
             width: 400,
             child: Row(
               children: <Widget>[
                 const SizedBox(
                   width: 5,
-                ),
-                Card(
-                  color: Colors.white12,
-                  child: InkWell(
-                    onTap: () {},
-                    child: Row(
-                      children: <Widget>[
-                        const SizedBox(
-                          width: 13,
-                        ),
-                        Column(
-                          children: <Widget>[
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            CircleAvatar(
-                              child: Text(
-                                '?',
-                                style: GoogleFonts.actor(
-                                  fontSize: 13,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                              radius: 12,
-                              backgroundColor: Colors.white12,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 13,
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
                 const SizedBox(
                   width: 5,
@@ -326,10 +326,11 @@ class _RewardsState extends State<Rewards> {
                   'Ibolo Rewards FAQ',
                   style: GoogleFonts.actor(
                     fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(
-                  width: 150,
+                  width: 210,
                 ),
                 CircleAvatar(
                   backgroundColor: Colors.white12,
@@ -338,7 +339,7 @@ class _RewardsState extends State<Rewards> {
                     icon: const Icon(
                       Icons.arrow_forward_ios,
                       size: 10,
-                      color: Colors.blue,
+                      color: Colors.white,
                     ),
                   ),
                   radius: 12,
@@ -387,19 +388,41 @@ class _RewardsState extends State<Rewards> {
               const SizedBox(
                 width: 30,
               ),
-              RaisedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/join');
-                },
-                child: Text(
-                  'JOIN NOW',
-                  style: GoogleFonts.actor(
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
+              Container(
+                width: 180,
+                height: 42,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  // ignore: prefer_const_constructors
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    // 10% of the width, so there are ten blinds.
+                    // ignore: prefer_const_literals_to_create_immutables
+                    colors: <Color>[
+                      const Color(0xffd1c217),
+                      const Color(0xff403109),
+                    ], // red to yellow
+                    tileMode: TileMode
+                        .repeated, // repeats the gradient over the canvas
                   ),
                 ),
-                color: Colors.orange,
-                padding: const EdgeInsets.fromLTRB(45, 10, 45, 10),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  child: Center(
+                    child: Text(
+                      "JOIN NOW",
+                      style: GoogleFonts.actor(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.0,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

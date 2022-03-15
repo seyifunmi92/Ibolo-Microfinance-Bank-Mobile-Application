@@ -1,11 +1,11 @@
 import 'dart:core';
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Support extends StatefulWidget {
   const Support({Key? key}) : super(key: key);
-
   @override
   _SupportState createState() => _SupportState();
 }
@@ -26,51 +26,25 @@ class Files {
 }
 
 class _SupportState extends State<Support> {
+  hexColor(String mycolor) {
+    String newcolor = "0xff" + mycolor;
+    newcolor = newcolor.replaceAll("#", "");
+    int colorint = int.parse(newcolor);
+    return colorint;
+  }
+
   List support = [
-    Files(
-      "Account Officer",
-      "accounts",
-    ),
-    Files(
-      "Livechat",
-      "live",
-    ),
-    Files(
-      "Ibolo Inflow Details",
-      "inflow",
-    ),
-    Files(
-      "FAQ",
-      "faq",
-    ),
-    Files(
-      "Report an issue",
-      "report",
-    ),
-    Files(
-      "Send Feedback",
-      "feed",
-    ),
-    Files(
-      "Ibolobank_help",
-      "help",
-    ),
-    Files(
-      "Customer care",
-      "customer",
-    ),
-    Files(
-      "Social Media",
-      "social",
-    ),
-    Files(
-      "Community Service",
-      "community",
-    ),
-    Files(
-      "Suggestions and Complaints",
-      "suggestions",
-    ),
+    Files("Account Officer", "accounts"),
+    Files("Livechat", "live"),
+    Files("Ibolo Inflow Details", "inflow"),
+    Files("FAQ", "faq"),
+    Files("Report an issue", "report"),
+    Files("Send Feedback", "feed"),
+    Files("Ibolobank_help", "help"),
+    Files("Customer care", "customer"),
+    Files("Social Media", "social"),
+    Files("Community Service", "community"),
+    Files("Suggestions and Complaints", "suggestions"),
   ];
   @override
   void initState() {
@@ -86,9 +60,9 @@ class _SupportState extends State<Support> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const CircleAvatar(
-              radius: 30,
-              backgroundImage: AssetImage('lib/images/besta.jpeg'),
+            const Image(
+              image: AssetImage("lib/images/ibolospng.png"),
+              height: 68,
             ),
             const SizedBox(
               height: 10,
@@ -103,7 +77,7 @@ class _SupportState extends State<Support> {
                   'Welcome to Ibolo Support',
                   style: GoogleFonts.actor(
                     fontSize: 18,
-                    color: Colors.white70,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 0,
                   ),
@@ -122,7 +96,7 @@ class _SupportState extends State<Support> {
                   'App version: 2.0',
                   style: GoogleFonts.actor(
                     fontSize: 10,
-                    color: Colors.white70,
+                    color: Colors.blueGrey,
                   ),
                 ),
               ],
@@ -130,14 +104,28 @@ class _SupportState extends State<Support> {
           ],
         ),
         centerTitle: true,
-        backgroundColor: Colors.grey[900],
-        toolbarHeight: 160,
+        backgroundColor: Colors.white,
+        toolbarHeight: 130,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
       ),
       backgroundColor: Colors.white12,
       body: ListView.builder(
         itemCount: support.length,
         itemBuilder: (BuildContext context, int index) {
-          return Dismissible(
+          return Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Color(hexColor("#3b7514")),
+                  Color(hexColor("#0d3303")),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(5),
+            ),
             key: Key(support[index].name),
             child: Card(
               child: ListTile(
@@ -146,6 +134,7 @@ class _SupportState extends State<Support> {
                   style: GoogleFonts.lato(
                     fontSize: 14,
                     letterSpacing: 0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 trailing: CircleAvatar(
@@ -174,10 +163,23 @@ class _SupportState extends State<Support> {
         child: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           notchMargin: 10,
-          color: Colors.grey[900],
-          // ignore: sized_box_for_whitespace
+          color: Colors.transparent,
           child: Container(
             height: 70,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Color(0xff403109),
+                  Color(0xff211b0b),
+                ],
+              ),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              ),
+            ),
             child: Row(
               children: <Widget>[
                 const SizedBox(
@@ -233,9 +235,10 @@ class _SupportState extends State<Support> {
                       Text(
                         'Menu',
                         style: GoogleFonts.actor(
-                          fontSize: 12,
+                          fontSize: 11,
                           color: Colors.white,
-                          letterSpacing: 0.5,
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
@@ -280,17 +283,19 @@ class _SupportState extends State<Support> {
                         height: 0,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/support');
+                        },
                         icon: const Icon(
                           Icons.headset_mic_outlined,
                         ),
-                        color: Colors.blue,
+                        color: Colors.orange,
                       ),
                       Text(
                         'Support',
                         style: GoogleFonts.actor(
                           fontSize: 12,
-                          color: Colors.blue,
+                          color: Colors.orange,
                           letterSpacing: 0.5,
                         ),
                       ),

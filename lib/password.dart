@@ -61,12 +61,12 @@ class _PasswordState extends State<Password> {
                     height: 40,
                   ),
                   Container(
-                    padding: EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(30),
                     child: Column(
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                               labelText: 'Password',
                               labelStyle: GoogleFonts.lato(
                                 letterSpacing: 1.0,
@@ -78,7 +78,7 @@ class _PasswordState extends State<Password> {
                         ),
                         TextFormField(
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                             labelText: 'Confirm Password',
                             labelStyle: GoogleFonts.lato(
                               letterSpacing: 1.0,

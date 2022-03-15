@@ -9,6 +9,13 @@ class Unlock extends StatefulWidget {
 }
 
 class _UnlockState extends State<Unlock> {
+  hexColor(String mycolor) {
+    String newcolor = "0xff" + mycolor;
+    newcolor = newcolor.replaceAll("#", "");
+    int colorint = int.parse(newcolor);
+    return colorint;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -27,19 +34,26 @@ class _UnlockState extends State<Unlock> {
         ),
         Scaffold(
             appBar: AppBar(
+              backgroundColor: Colors.white,
               automaticallyImplyLeading: false,
               title: Text(
                 'Reset Password',
                 style: GoogleFonts.lato(
-                  fontSize: 20,
-                  color: Colors.white,
+                  fontSize: 18,
+                  color: Colors.blueGrey,
                   letterSpacing: 0.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               centerTitle: true,
-              backgroundColor: Colors.white12,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                ),
+              ),
             ),
-            backgroundColor: Colors.transparent,
+            backgroundColor: Color(hexColor("#fffcfd")),
             body: Center(
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -48,25 +62,31 @@ class _UnlockState extends State<Unlock> {
                     Column(
                       children: <Widget>[
                         const SizedBox(
-                          height: 30,
+                          height: 0,
                         ),
                         Text(
                           'Start the reset process by entering the ',
-                          style: GoogleFonts.lato(
-                            fontSize: 14,
-                            color: Colors.grey,
+                          style: GoogleFonts.actor(
+                            fontSize: 15,
+                            color: Colors.blueGrey,
                             letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
                           ),
+                        ),
+                        const SizedBox(
+                          height: 10,
                         ),
                         Text(
                           'information below',
                           style: GoogleFonts.actor(
-                            fontSize: 14,
-                            color: Colors.grey,
+                            fontSize: 15,
+                            color: Colors.blueGrey,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(
-                          height: 60,
+                          height: 100,
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -74,18 +94,18 @@ class _UnlockState extends State<Unlock> {
                             children: <Widget>[
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  borderRadius: BorderRadius.circular(3),
+                                  color: Colors.blueGrey.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
                                     contentPadding: const EdgeInsets.all(10),
                                     border: InputBorder.none,
                                     hintText: '  Account Number',
-                                    hintStyle: GoogleFonts.lato(
+                                    hintStyle: GoogleFonts.actor(
                                       fontSize: 12,
-                                      color: Colors.grey,
-                                      letterSpacing: 1.0,
+                                      color: Colors.grey[600],
+                                      letterSpacing: 0.0,
                                     ),
                                   ),
                                   textInputAction: TextInputAction.next,
@@ -98,18 +118,18 @@ class _UnlockState extends State<Unlock> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  borderRadius: BorderRadius.circular(3),
+                                  color: Colors.blueGrey.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
                                     contentPadding: const EdgeInsets.all(10),
                                     border: InputBorder.none,
                                     hintText: '  Username',
-                                    hintStyle: GoogleFonts.lato(
+                                    hintStyle: GoogleFonts.actor(
                                       fontSize: 12,
-                                      color: Colors.grey,
-                                      letterSpacing: 1.0,
+                                      color: Colors.grey[600],
+                                      letterSpacing: 0.0,
                                     ),
                                   ),
                                   keyboardType: TextInputType.emailAddress,
@@ -118,26 +138,46 @@ class _UnlockState extends State<Unlock> {
                                 ),
                               ),
                               const SizedBox(
-                                height: 60,
+                                height: 40,
                               ),
-                              RaisedButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/bills');
-                                },
-                                child: Text(
-                                  'RESET',
-                                  style: GoogleFonts.actor(
-                                    letterSpacing: 3.0,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
+                              Container(
+                                width: 320,
+                                height: 42,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(2),
+                                  // ignore: prefer_const_constructors
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    // 10% of the width, so there are ten blinds.
+                                    // ignore: prefer_const_literals_to_create_immutables
+                                    colors: <Color>[
+                                      const Color(0xffd1c217),
+                                      const Color(0xff403109),
+                                    ], // red to yellow
+                                    tileMode: TileMode
+                                        .repeated, // repeats the gradient over the canvas
                                   ),
                                 ),
-                                padding:
-                                    const EdgeInsets.fromLTRB(133, 17, 133, 17),
-                                color: Colors.white12,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(context, '/login');
+                                  },
+                                  child: Center(
+                                    child: Text(
+                                      "RESET",
+                                      style: GoogleFonts.actor(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.0,
+                                        fontSize: 11,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                               const SizedBox(
-                                height: 300,
+                                height: 280,
                               ),
                               TextButton(
                                 onPressed: () {
@@ -146,9 +186,10 @@ class _UnlockState extends State<Unlock> {
                                 child: Text(
                                   'BACK TO LOGIN',
                                   style: GoogleFonts.lato(
-                                    fontSize: 14,
-                                    color: Colors.grey,
-                                    letterSpacing: 2.0,
+                                    fontSize: 12,
+                                    color: Colors.blueGrey,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),

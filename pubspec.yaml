@@ -32,6 +32,13 @@ dependencies:
   google_fonts: ^2.1.0
   carousel_slider: ^4.0.0
   smooth_page_indicator: ^1.0.0+2
+  firebase_auth: ^3.3.6
+  cloud_firestore: ^3.1.7
+  http: ^0.13.4
+  firebase_core: ^1.12.0
+  local_auth: ^1.1.11
+
+
 
 
 
@@ -77,6 +84,26 @@ flutter:
   - lib/images/homeee.jpg
   - lib/images/homi.jpg
   - lib/images/homii.jpg
+  - lib/images/ibolopng.png
+  - lib/images/ibolospng.png
+  - lib/images/iboloss.jpg
+  - lib/images/ibolo.png
+  - lib/images/myibolo.jpeg
+  - lib/images/myibolo1.jpeg
+  - lib/images/myibolo2.jpeg
+  - lib/images/myibolo3.jpeg
+  - lib/images/myibolo4.jpeg
+  - lib/images/myibolo5.jpeg
+  - lib/images/pix.jpg
+  - lib/images/pixxx.jpeg
+  - lib/images/iboloairtel.jpeg
+  - lib/images/iboloetisalat.png
+  - lib/images/ibologlo.png
+  - lib/images/ibolomtn.png
+  - lib/images/spectranet.jpeg
+  - lib/images/etisalat.jpeg
+  - lib/images/airtel.jpg
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

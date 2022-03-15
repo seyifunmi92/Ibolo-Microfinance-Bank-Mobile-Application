@@ -1,11 +1,49 @@
 {
 	"folders": [
 		{
+			"path": "../../seye"
+		},
+		{
 			"path": ".."
 		},
 		{
-			"path": "../../slider"
+			"path": "../../finalapi"
+		},
+		{
+			"path": "../../jsonurl"
+		},
+		{
+			"path": "../../parsejson"
+		},
+		{
+			"path": "../../coredata"
+		},
+		{
+			"path": "../../dataapi"
+		},
+		{
+			"path": "../../auth"
+		},
+		{
+			"path": "../../formbook"
+		},
+		{
+			"path": "../../Saleo"
+		},
+		{
+			"path": "../../create"
+		},
+		{
+			"path": "../../code"
+		},
+		{
+			"path": "../../rest"
+		},
+		{
+			"path": "../../worldtimer"
+		},
+		{
+			"path": "../../../Downloads/mymedicinemobile"
 		}
-	],
-	"settings": {}
+	]
 }
